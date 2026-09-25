@@ -26,7 +26,7 @@ def _get_ai_service_url() -> str:
     global _AI_SERVICE_URL
     if _AI_SERVICE_URL is None:
         from app.config.settings import settings
-        _AI_SERVICE_URL = settings.ai_service_url
+        _AI_SERVICE_URL = settings.ai_service_url.strip().rstrip("/")
     return _AI_SERVICE_URL
 
 
